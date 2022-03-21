@@ -45,7 +45,7 @@ public class WhileAndDoStatement {
     //TEST for isPerfectNumber
     System.out.println(isPerfectNumber(5));
     //TEST for number to words
-    numberToWords(32);
+    numberToWords(100);
   }
 
  //CHALLENGE - ISEVENNUMBER
@@ -206,41 +206,63 @@ public class WhileAndDoStatement {
       System.out.println("Invalid Value");
       return;
     }
+    int reverseNumber = reverse(number);
+
+    for (int i=0; i < getDigitCount(number); i++) {
+      int lastDigit = reverseNumber % 10;
+      switch(lastDigit) {
+          case 0:
+          System.out.println("Zero");
+          break;
+          case 1:
+          System.out.println("One");
+          break;
+          case 2:
+          System.out.println("Two");
+          break;
+          case 3:
+          System.out.println("Three");
+          break;
+          case 4:
+          System.out.println("Four");
+          break;
+          case 5:
+          System.out.println("Five");
+          break;
+          case 6:
+          System.out.println("Six");
+          break;
+          case 7:
+          System.out.println("Seven");
+          break;
+          case 8:
+          System.out.println("Eight");
+          break;
+          case 9:
+          System.out.println("Nine");
+          break;
+        }
+      reverseNumber /= 10;
+    }
+  }
+  public static int reverse(int number) {
+    int reverse = 0;
     while (number != 0) {
       int lastDigit = number % 10;
-      switch(lastDigit) {
-        case 0:
-        System.out.println("Zero");
-        break;
-        case 1:
-        System.out.println("One");
-        break;
-        case 2:
-        System.out.println("Two");
-        break;
-        case 3:
-        System.out.println("Three");
-        break;
-        case 4:
-        System.out.println("Four");
-        break;
-        case 5:
-        System.out.println("Five");
-        break;
-        case 6:
-        System.out.println("Six");
-        break;
-        case 7:
-        System.out.println("Seven");
-        break;
-        case 8:
-        System.out.println("Eight");
-        break;
-        case 9:
-        System.out.println("Nine");
-        break;
-      }
+      reverse = (reverse * 10) + lastDigit;
       number /= 10;
     }
+    return reverse;
+  }
+  public static int getDigitCount(int number) {
+    if (number < 0) {
+      return -1;
+    }
+    int counter = 0;
+    while (number != 0) {
+      counter += 1;
+      number /= 10;
+    }
+    return counter;
   }
 }
