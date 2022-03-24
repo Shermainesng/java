@@ -11,7 +11,6 @@ public class MinimumElement {
     scanner.nextLine();
 
     int[] returnedArray = readIntegers(count);
-
     System.out.println("The minimum element is " + findMin(returnedArray));
   }
 
