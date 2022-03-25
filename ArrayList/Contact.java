@@ -1,4 +1,4 @@
-package Array;
+package ArrayList;
 
 public class Contact {
   private String name;
