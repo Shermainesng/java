@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 //player is the upper bound of T
 //bounded type parameter
-public class Team<T extends Player> implements Comparable<Team<T>>{
+public class Team<T extends Player> implements Comparable<Team<T>>{ //only accept Team classes, and only a specific type of Teams (soccer)
 // public class Team<T extends Player & Coach & Manager> - for multiple class types
   private String name;
   int played = 0;
